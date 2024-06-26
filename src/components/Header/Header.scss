@@ -1,6 +1,19 @@
+@use "../../styles/partials/mixins" as *;
+
 .header {
   &__title {
-    font-size: 5rem;
+    font-size: 3rem;
     text-align: center;
+    padding: 2rem;
+
+    @include tablet {
+      font-size: 4rem;
+    }
+
+    @include desktop {
+      text-align: right;
+      padding: 5rem 3rem 2rem 2rem;
+      font-size: 5rem;
+    }
   }
 }
