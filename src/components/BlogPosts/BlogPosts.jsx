@@ -3,7 +3,7 @@ import "./BlogPosts.scss";
 export default function BlogPosts({ posts }) {
   return (
     <section className="blog">
-      <h3 className="blog__header">Country Blog</h3>
+      <h3 className="blog__header">Country</h3>
       <article className="blog__article">
         <h2 className="blog__title">Mr Title</h2>
         <p className="blog__content">

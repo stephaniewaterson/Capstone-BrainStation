@@ -1,16 +1,37 @@
 @use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
 
 .nav {
-  position: fixed;
   background-color: $primary-color;
-  width: fit-content;
-  height: 100vh;
-  padding: 4rem 2rem;
+  width: 100%;
+
+  @include tablet {
+    padding: 4rem 1rem 10rem 1rem;
+    height: auto;
+    width: fit-content;
+    position: absolute;
+  }
+
+  &__items {
+    display: flex;
+    justify-content: space-evenly;
+
+    @include tablet {
+      flex-direction: column;
+    }
+  }
 
   &__item {
-    padding: 1rem 3rem;
-    font-size: 2rem;
+    font-size: 1rem;
+    padding: 1rem 0;
     list-style-type: none;
+    @include tablet {
+      padding: 1rem 2rem;
+    }
+
+    @include tablet {
+      font-size: 1.5rem;
+    }
   }
 
   &__link {

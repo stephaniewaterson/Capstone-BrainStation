@@ -7,19 +7,19 @@ export default function NavBar() {
         <Link className="nav__link" to="/">
           <li className="nav__item">Home</li>
         </Link>
-        <Link className="nav__link" to="/3">
+        <Link className="nav__link" to="/blog/3">
           <li className="nav__item">Lebanon</li>
         </Link>
-        <Link className="nav__link" to="/3">
+        <Link className="nav__link" to="/blog/1">
           <li className="nav__item">Brazil</li>
         </Link>
-        <Link className="nav__link" to="/3">
+        <Link className="nav__link" to="/blog/5">
           <li className="nav__item">Colombia</li>
         </Link>
-        <Link className="nav__link" to="/3">
+        <Link className="nav__link" to="/blog/4">
           <li className="nav__item">Taiwan</li>
         </Link>
-        <Link className="nav__link" to="/3">
+        <Link className="nav__link" to="/blog/2">
           <li className="nav__item">Japan</li>
         </Link>
         {/* map over locations {locations

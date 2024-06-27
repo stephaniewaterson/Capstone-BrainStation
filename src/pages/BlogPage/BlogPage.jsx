@@ -26,8 +26,8 @@ export default function BlogPage() {
   }
   return (
     <>
-      <NavBar />;
-      <BlogPosts />;
+      <NavBar />
+      <BlogPosts />
     </>
   );
 }
