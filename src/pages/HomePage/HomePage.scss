@@ -2,6 +2,10 @@
 @use "../../styles/partials/mixins" as *;
 
 .home {
+  padding-top: 15rem;
+  &__link {
+    text-decoration: none;
+  }
   &__graphic {
     display: none;
 
@@ -9,8 +13,8 @@
       display: inline;
       position: absolute;
       z-index: 1;
-      top: 10rem;
-      left: -4rem;
+      top: 12rem;
+      left: 0rem;
       width: 100%;
     }
   }
@@ -36,14 +40,17 @@
   &__header {
     font-size: 2rem;
     text-align: center;
-    padding: 1rem 0 3rem 0;
+    padding: 4rem 0 5rem 0;
+    color: $primary-color;
+    font-weight: 600;
+
     @include tablet {
       font-size: 2.5rem;
     }
 
     @include desktop {
       text-align: left;
-      padding: 0 0 0 4rem;
+      padding: 0 0 4rem 3.5rem;
       font-size: 3rem;
     }
   }

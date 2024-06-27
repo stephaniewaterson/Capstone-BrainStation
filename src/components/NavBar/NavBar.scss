@@ -1,0 +1,20 @@
+@use "../../styles/partials/colors" as *;
+
+.nav {
+  position: fixed;
+  background-color: $primary-color;
+  width: fit-content;
+  height: 100vh;
+  padding: 4rem 2rem;
+
+  &__item {
+    padding: 1rem 3rem;
+    font-size: 2rem;
+    list-style-type: none;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: white;
+  }
+}
