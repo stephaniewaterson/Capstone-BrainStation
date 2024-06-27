@@ -1,7 +1,7 @@
 @use "../../styles/partials/mixins" as *;
 
 .header {
-  width: 95%;
+  width: 100%;
   text-align: center;
 
   &__title {
@@ -14,8 +14,8 @@
     @include tablet {
       font-size: 4rem;
       position: absolute;
-      width: 100%;
       padding-right: 2rem;
+      width: 95%;
       text-align: right;
     }
 
@@ -23,6 +23,7 @@
       text-align: right;
       padding: 5rem 3rem 2rem 2rem;
       font-size: 5rem;
+      width: 95%;
     }
   }
 }

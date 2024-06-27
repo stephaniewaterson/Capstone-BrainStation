@@ -2,12 +2,15 @@
 @use "../../styles/partials/mixins" as *;
 
 .home {
-  padding-top: 15rem;
   &__link {
     text-decoration: none;
   }
   &__graphic {
     display: none;
+
+    @include tablet {
+      padding-top: 15rem;
+    }
 
     @include desktop {
       display: inline;
@@ -22,7 +25,6 @@
     @include desktop {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      width: fit-content;
       padding: 2rem;
     }
   }
@@ -40,17 +42,18 @@
   &__header {
     font-size: 2rem;
     text-align: center;
-    padding: 4rem 0 5rem 0;
+    padding: 2rem 0;
     color: $primary-color;
     font-weight: 600;
 
     @include tablet {
       font-size: 2.5rem;
+      padding-top: 10rem;
     }
 
     @include desktop {
       text-align: left;
-      padding: 0 0 4rem 3.5rem;
+      padding: 10rem 0 4rem 3.5rem;
       font-size: 3rem;
     }
   }
@@ -76,7 +79,7 @@
 
     @include desktop {
       height: 20rem;
-      width: 30rem;
+      width: 100%;
     }
   }
 }
