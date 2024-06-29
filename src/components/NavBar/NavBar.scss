@@ -2,11 +2,9 @@
 @use "../../styles/partials/mixins" as *;
 
 .nav {
-  background-color: $primary-color;
   width: 100%;
 
   @include tablet {
-    padding: 4rem 1rem 10rem 1rem;
     height: auto;
     width: fit-content;
     position: absolute;
@@ -14,17 +12,15 @@
 
   &__items {
     display: flex;
+    margin-left: 2rem;
     justify-content: space-evenly;
-
-    @include tablet {
-      flex-direction: column;
-    }
   }
 
   &__item {
     font-size: 1rem;
     padding: 1rem 0;
     list-style-type: none;
+
     @include tablet {
       padding: 1rem 2rem;
     }
@@ -36,6 +32,16 @@
 
   &__link {
     text-decoration: none;
-    color: white;
+    color: $primary-color;
+    border-radius: 48% 52% 65% 35% / 42% 50% 50% 58%;
+
+    @include desktop {
+      margin: 3rem 1rem;
+
+      &:hover {
+        background-color: $primary-color;
+        color: white;
+      }
+    }
   }
 }

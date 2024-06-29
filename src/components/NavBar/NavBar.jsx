@@ -7,32 +7,16 @@ export default function NavBar() {
         <Link className="nav__link" to="/">
           <li className="nav__item">Home</li>
         </Link>
-        <Link className="nav__link" to="/blog/3">
-          <li className="nav__item">Lebanon</li>
+        <Link className="nav__link" to="/translate">
+          <li className="nav__item">Translate</li>
         </Link>
-        <Link className="nav__link" to="/blog/1">
-          <li className="nav__item">Brazil</li>
+
+        <Link className="nav__link" to="/blog">
+          <li className="nav__item">Choose Country</li>
         </Link>
-        <Link className="nav__link" to="/blog/5">
-          <li className="nav__item">Colombia</li>
+        <Link className="nav__link" to="">
+          <li className="nav__item">Help</li>
         </Link>
-        <Link className="nav__link" to="/blog/4">
-          <li className="nav__item">Taiwan</li>
-        </Link>
-        <Link className="nav__link" to="/blog/2">
-          <li className="nav__item">Japan</li>
-        </Link>
-        {/* map over locations {locations
-        .filter((location) => location.id !== activeLocation.id)
-        .map((location) => {
-          return (
-            <Link
-              className="locations__link"
-              key={locations.id}
-              to={`/blog/${location.id}`}
-            >
-              <NextVideo location={location} />
-            </Link>  */}
       </ul>
     </section>
   );

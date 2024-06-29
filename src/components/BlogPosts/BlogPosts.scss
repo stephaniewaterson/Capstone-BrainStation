@@ -4,7 +4,7 @@
   padding: 2rem;
 
   @include tablet {
-    padding: 10rem 5rem 2rem 14rem;
+    padding: 12rem 5rem 2rem 5rem;
   }
 
   &__header {
@@ -14,32 +14,6 @@
     @include desktop {
       padding: 0 3rem;
       text-align: left;
-    }
-  }
-
-  &__article {
-    @include desktop {
-      width: 70%;
-      padding: 2rem 3rem;
-    }
-  }
-
-  &__title {
-    font-size: 1.5rem;
-    padding: 1.5rem 0;
-
-    @include tablet {
-      font-size: 2rem;
-      padding: 2rem 0;
-    }
-  }
-
-  &__content {
-    font-size: 1rem;
-
-    @include desktop {
-      text-align: left;
-      font-size: 1.5rem;
     }
   }
 }

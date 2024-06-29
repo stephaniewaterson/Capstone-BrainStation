@@ -9,9 +9,10 @@ const API_URL = import.meta.env.VITE_BACKEND_URL;
 export default function BlogPage() {
   const { id } = useParams();
   const [posts, setPosts] = useState(null);
+
   const fetchPosts = async (id) => {
     try {
-      const { data } = await axios.get(`${API_URL}}/api/posts/${id}`);
+      const { data } = await axios.get(`${API_URL}/locations/${id}/posts`);
       setPosts(data);
     } catch (error) {
       console.log(error);
@@ -22,12 +23,13 @@ export default function BlogPage() {
   }, [id]);
 
   if (!posts) {
-    return <> Loading...</>;
+    return <> Loading blog posts...</>;
   }
+
   return (
     <>
       <NavBar />
-      <BlogPosts />
+      <BlogPosts posts={posts} />
     </>
   );
 }
