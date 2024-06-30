@@ -1,4 +1,4 @@
-export default function PostCard({ post }) {
+export default function BlogCard({ post }) {
   const date = new Date(post.timestamp);
 
   return (

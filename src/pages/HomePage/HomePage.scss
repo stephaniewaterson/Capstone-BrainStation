@@ -1,0 +1,17 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__header {
+    text-align: center;
+    font-size: 6rem;
+    font-weight: 500;
+    padding-top: 20rem;
+  }
+
+  &__button {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+}

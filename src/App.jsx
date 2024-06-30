@@ -4,13 +4,14 @@ import Header from "./components/Header/Header";
 import BlogHome from "./pages/BlogHome/BlogHome";
 import BlogPage from "./pages/BlogPage/BlogPage";
 import AddPost from "./pages/AddPost/AddPost";
+import HomePage from "./pages/HomePage/HomePage";
 import "./App.scss";
 
 function App() {
   return (
     <BrowserRouter>
-      <Header />
       <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route path="/blog" element={<BlogHome />} />
         <Route path="/blog/:id" element={<BlogPage />} />
         <Route path="Spanish/blog/:id/add" element={<AddPost />} />
