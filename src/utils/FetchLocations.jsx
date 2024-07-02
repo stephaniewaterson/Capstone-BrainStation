@@ -4,6 +4,7 @@ import axios from "axios";
 export default function fetchLocations() {
   const [locations, setLocations] = useState(null);
   const [error, setError] = useState(null);
+  const [fetchTrigger, setFetchTrigger] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {

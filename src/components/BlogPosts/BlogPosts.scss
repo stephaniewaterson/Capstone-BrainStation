@@ -1,7 +1,7 @@
 @use "../../styles/partials/mixins" as *;
 
 .blog {
-  padding: 2rem;
+  padding: 0 2rem;
 
   @include tablet {
     padding: 2rem 5rem 2rem 5rem;

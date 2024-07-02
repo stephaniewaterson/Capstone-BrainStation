@@ -1,17 +1,69 @@
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/mixins" as *;
+
 .home {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   &__header {
     text-align: center;
-    font-size: 6rem;
+    font-size: 4rem;
     font-weight: 500;
-    padding-top: 20rem;
+    padding-top: 5rem;
+
+    @include tablet {
+      font-size: 6rem;
+      padding-top: 10rem;
+    }
+
+    @include desktop {
+      padding-top: 15rem;
+    }
+  }
+}
+
+.menu__title {
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-family: "Montserrat";
+}
+
+.dropdown {
+  &__links {
+    list-style-type: none;
+    text-align: center;
+  }
+  &__link {
+    text-decoration: none;
+    color: $primary-color;
+    line-height: 2rem;
+    font-size: 1rem;
   }
 
-  &__button {
-    padding: 1rem;
-    font-size: 1rem;
+  &__menu.inactive {
+    display: none;
+  }
+
+  &__menu.active {
+  }
+
+  &__title {
+    font-size: 2rem;
+    padding: 0.75rem;
+
+    &:hover {
+      // text-decoration: underline;
+      border-bottom-style: solid;
+      border-bottom-width: 0.25rem;
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+      border-top: solid;
+      border-top-width: 0.25rem;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+    }
   }
 }

@@ -3,35 +3,37 @@
 
 .blog-home {
   &__header {
-    font-size: 2rem;
+    font-size: 2.5rem;
     text-align: center;
     padding: 2rem 0;
     color: $primary-color;
     font-weight: 600;
 
     @include tablet {
-      font-size: 2.5rem;
+      font-size: 3rem;
       padding-top: 10rem;
+      padding-left: 6rem;
+      text-align: left;
     }
 
     @include desktop {
-      text-align: left;
-      padding: 10rem 0 4rem 3.5rem;
-      font-size: 3rem;
+      padding: 10rem 0 6rem 6rem;
+      font-size: 4rem;
     }
   }
 }
 
 .locationfinder {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
-  gap: 10rem;
+  gap: 2rem;
   padding: 2rem;
 
   @include tablet {
     flex-direction: row;
-    gap: 20rem;
+    gap: 2rem;
   }
 
   &__link {
@@ -42,5 +44,26 @@
   &__header {
     font-size: 2rem;
     color: black;
+    padding-bottom: 1rem;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &__image {
+    width: 100%;
+    height: 15rem;
+    object-fit: cover;
+
+    @include tablet {
+      width: 15rem;
+      height: 30rem;
+      object-fit: cover;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 }

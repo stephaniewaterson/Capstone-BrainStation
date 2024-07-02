@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import NavBar from "../../components/NavBar/NavBar";
 import Header from "../../components/Header/Header";
 import BlogPosts from "../../components/BlogPosts/BlogPosts";
 import fetchLocations from "../../utils/FetchLocations.jsx";
+import addIcon from "../../assets/icons/add.png";
 import "./BlogPage.scss";
+import AddPostModal from "../../components/AddPostModal/AddPostModal";
 
 const API_URL = import.meta.env.VITE_BACKEND_URL;
 
@@ -45,6 +47,23 @@ export default function BlogPage() {
             </h2>
           );
         })}
+      <Link className="blog-page__link">
+        <AddPostModal
+        // open={isOpen}
+        // onClose={() => setIsOpen(false)}
+        // fetchPosts={refetch}
+        />
+        <article className="blog-page__add">
+          <h3 className="blog-page___add-header">Add post</h3>
+          <img className="blog-page__add-icon" src={addIcon} alt="" />
+        </article>
+      </Link>
+      <AddPostModal
+      // open={isOpen}
+      // onClose={() => setIsOpen(false)}
+      // fetchPosts={refetch}
+      />
+
       <BlogPosts posts={posts} />
     </>
   );

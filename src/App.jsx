@@ -5,11 +5,13 @@ import BlogHome from "./pages/BlogHome/BlogHome";
 import BlogPage from "./pages/BlogPage/BlogPage";
 import AddPost from "./pages/AddPost/AddPost";
 import HomePage from "./pages/HomePage/HomePage";
+import NavBar from "./components/NavBar/NavBar";
 import "./App.scss";
 
 function App() {
   return (
     <BrowserRouter>
+      <NavBar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/blog" element={<BlogHome />} />

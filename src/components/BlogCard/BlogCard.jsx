@@ -1,3 +1,5 @@
+import "./BlogCard.scss";
+
 export default function BlogCard({ post }) {
   const date = new Date(post.timestamp);
 

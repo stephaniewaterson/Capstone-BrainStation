@@ -28,6 +28,11 @@ export default function BlogHome() {
               className="locationfinder__link"
             >
               <h3 className="locationfinder__header">{location.name}</h3>
+              <img
+                src={location.img}
+                alt=""
+                className="locationfinder__image"
+              />
             </Link>
           ))}
         </article>
