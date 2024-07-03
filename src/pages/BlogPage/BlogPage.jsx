@@ -12,7 +12,8 @@ import AddPostModal from "../../components/AddPostModal/AddPostModal";
 const API_URL = import.meta.env.VITE_BACKEND_URL;
 
 export default function BlogPage() {
-  const { locations, error } = fetchLocations();
+  const [isOpen, setIsOpen] = useState(false);
+  const { locations, error, refetch } = fetchLocations();
 
   const { id } = useParams();
   const [posts, setPosts] = useState(null);
@@ -36,35 +37,34 @@ export default function BlogPage() {
 
   return (
     <>
-      <NavBar />
-      <Header />
-      {locations
-        .filter((location) => location.id === parseInt(id))
-        .map((location) => {
-          return (
-            <h2 key={location.id} className="blog-page__header">
-              {location.name}
-            </h2>
-          );
-        })}
-      <Link className="blog-page__link">
+      <div id="portal">
         <AddPostModal
-        // open={isOpen}
-        // onClose={() => setIsOpen(false)}
-        // fetchPosts={refetch}
+          open={isOpen}
+          posts={posts}
+          onClose={() => setIsOpen(false)}
+          fetchPosts={refetch}
         />
-        <article className="blog-page__add">
-          <h3 className="blog-page___add-header">Add post</h3>
-          <img className="blog-page__add-icon" src={addIcon} alt="" />
-        </article>
-      </Link>
-      <AddPostModal
-      // open={isOpen}
-      // onClose={() => setIsOpen(false)}
-      // fetchPosts={refetch}
-      />
+      </div>
+      <section className="overlap-posts">
+        <Header />
+        {locations
+          .filter((location) => location.id === parseInt(id))
+          .map((location) => {
+            return (
+              <h2 key={location.id} className="blog-page__header">
+                {location.name}
+              </h2>
+            );
+          })}
+        <Link className="blog-page__link" onClick={() => setIsOpen(true)}>
+          <article className="blog-page__add">
+            <h3 className="blog-page___add-header">Add post</h3>
+            <img className="blog-page__add-icon" src={addIcon} alt="" />
+          </article>
+        </Link>
 
-      <BlogPosts posts={posts} />
+        <BlogPosts posts={posts} />
+      </section>
     </>
   );
 }

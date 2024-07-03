@@ -19,7 +19,11 @@ export default function fetchLocations() {
     };
 
     fetchData();
-  }, []);
+  }, [fetchTrigger]);
 
-  return { locations, error };
+  const refetch = () => {
+    setFetchTrigger((prevFetch) => prevFetch + 1);
+  };
+
+  return { locations, error, refetch };
 }
