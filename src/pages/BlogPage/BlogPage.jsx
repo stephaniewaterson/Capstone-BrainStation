@@ -13,7 +13,7 @@ const API_URL = import.meta.env.VITE_BACKEND_URL;
 
 export default function BlogPage() {
   const [isOpen, setIsOpen] = useState(false);
-  const { locations, error, refetch } = fetchLocations();
+  const { locations, error, fetchData } = fetchLocations();
 
   const { id } = useParams();
   const [posts, setPosts] = useState(null);
@@ -42,7 +42,7 @@ export default function BlogPage() {
           open={isOpen}
           posts={posts}
           onClose={() => setIsOpen(false)}
-          fetchPosts={refetch}
+          fetchPosts={fetchPosts}
         />
       </div>
       <section className="overlap-posts">

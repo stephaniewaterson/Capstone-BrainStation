@@ -21,6 +21,8 @@
 
   &__close {
     margin-left: 85%;
+    border-radius: 0.5rem;
+    border: 1px $secondary-color solid;
 
     @include desktop {
       margin-left: 95%;
@@ -28,23 +30,55 @@
   }
 
   &__close-image {
-    width: 2.5rem;
+    width: 1.5rem;
+
+    @include tablet {
+      width: 2.5rem;
+    }
   }
 
   &__form {
     width: 100%;
     text-align: center;
+
+    &__box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__label {
+      background-color: $secondary-color;
+      color: black;
+      padding: 0.5rem 1rem;
+      margin-bottom: 0.75rem;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      font-family: "Montserrat";
+    }
+
+    @include tablet {
+      font-size: 1.25rem;
+    }
   }
 
   &__input {
     width: 80%;
-    height: 10rem;
-    border: 1px solid $primary-color;
+    border: 1px solid $secondary-color;
     border-radius: 0.5rem;
 
     @include desktop {
       width: 100%;
     }
+  }
+
+  &__input--title {
+    height: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  &__input--content {
+    height: 10rem;
   }
 
   &__button-wrapper {
@@ -56,9 +90,17 @@
     width: 40%;
     padding: 0.75rem;
     border-radius: 0.5rem;
-    color: $primary-color;
-    border: 1px solid $primary-color;
-    margin: 0 0.5rem;
+    color: black;
+    background-color: $secondary-color;
+    border: 1px solid $secondary-color;
+    margin: 1rem 0.5rem;
+    font-size: 1rem;
+    font-family: "Montserrat";
+    font-weight: 600;
+
+    @include tablet {
+      font-size: 1.25rem;
+    }
 
     @include desktop {
       width: 45%;
