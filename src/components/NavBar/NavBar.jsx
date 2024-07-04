@@ -11,8 +11,8 @@ export default function NavBar() {
           </NavLink>
         </li>
         <li>
-          <NavLink className="nav__link" to="/translate">
-            Translate
+          <NavLink className="nav__link" to="/chat">
+            Chat
           </NavLink>
         </li>
         <li>

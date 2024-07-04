@@ -19,8 +19,6 @@ export default function BlogComments({ posts }) {
     }
   };
 
-  const PostId = posts.find((post) => post.id === id);
-
   //   function getPostId() {
   //     for (const post of posts) {
   //       console.log(post);
