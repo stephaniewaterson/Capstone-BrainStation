@@ -11,8 +11,6 @@ export default function fetchLocations() {
         `${import.meta.env.VITE_BACKEND_URL}/locations`
       );
       setLocations(data);
-      console.log(data);
-      console.log("hello");
     } catch (error) {
       setError(error);
     }

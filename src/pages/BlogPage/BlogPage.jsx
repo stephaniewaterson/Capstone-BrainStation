@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
-import NavBar from "../../components/NavBar/NavBar";
 import Header from "../../components/Header/Header";
 import BlogPosts from "../../components/BlogPosts/BlogPosts";
 import fetchLocations from "../../utils/FetchLocations.jsx";

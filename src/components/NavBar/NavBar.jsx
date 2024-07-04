@@ -21,7 +21,7 @@ export default function NavBar() {
           </NavLink>
         </li>
         <li>
-          <NavLink className="nav__link" to="">
+          <NavLink className="nav__link" to="/help">
             Help
           </NavLink>
         </li>

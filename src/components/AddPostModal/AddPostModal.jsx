@@ -61,7 +61,7 @@ export default function AddPostModel({ open, onClose, fetchPosts, posts }) {
         >
           <div className="modal__form__box">
             <label className="modal__form__label" htmlFor="title">
-              Name
+              Title
             </label>
             <input
               className="modal__input modal__input--title"
@@ -71,7 +71,7 @@ export default function AddPostModel({ open, onClose, fetchPosts, posts }) {
           </div>
           <div className="modal__form__box">
             <label className="modal__form__label" htmlFor="title">
-              Description
+              Post
             </label>
             <input
               className="modal__input modal__input--content"

@@ -2,6 +2,7 @@ import "./BlogPosts.scss";
 import BlogCard from "../BlogCard/BlogCard";
 import { BeatLoader } from "react-spinners";
 import { useParams } from "react-router";
+import BlogComments from "../../components/BlogComments/BlogComments.jsx";
 
 export default function BlogPosts({ posts }) {
   return (
@@ -12,10 +13,7 @@ export default function BlogPosts({ posts }) {
           return <BlogCard key={post.id} post={post} />;
         })}
       </article>
+      <BlogComments />
     </section>
   );
 }
-
-// {locations.map((location) => {
-//   <h3 className="blog__header">{location.name}</h3>;
-// })}

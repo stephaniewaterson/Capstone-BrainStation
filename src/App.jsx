@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
 import BlogHome from "./pages/BlogHome/BlogHome";
 import BlogPage from "./pages/BlogPage/BlogPage";
 import AddPost from "./pages/AddPost/AddPost";
 import HomePage from "./pages/HomePage/HomePage";
 import NavBar from "./components/NavBar/NavBar";
+import HelpPage from "./pages/HelpPage/HelpPage";
 import "./App.scss";
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
         <Route path="/blog" element={<BlogHome />} />
         <Route path="/blog/:id" element={<BlogPage />} />
         <Route path="Spanish/blog/:id/add" element={<AddPost />} />
+        <Route path="/help" element={<HelpPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>

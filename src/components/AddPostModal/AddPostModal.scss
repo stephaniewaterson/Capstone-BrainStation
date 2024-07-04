@@ -22,7 +22,7 @@
   &__close {
     margin-left: 85%;
     border-radius: 0.5rem;
-    border: 1px $secondary-color solid;
+    border: 2px $secondary-color solid;
 
     @include desktop {
       margin-left: 95%;
@@ -64,7 +64,7 @@
 
   &__input {
     width: 80%;
-    border: 1px solid $secondary-color;
+    border: 2px solid $secondary-color;
     border-radius: 0.5rem;
 
     @include desktop {
@@ -73,12 +73,16 @@
   }
 
   &__input--title {
-    height: 3rem;
+    padding: 1rem 1rem 2rem 1rem;
+    overflow: hidden;
     margin-bottom: 2rem;
+    font-size: 1.25rem;
   }
 
   &__input--content {
-    height: 10rem;
+    padding: 1rem 1rem 10rem 1rem;
+    overflow: hidden;
+    font-size: 1.25rem;
   }
 
   &__button-wrapper {
@@ -92,7 +96,7 @@
     border-radius: 0.5rem;
     color: black;
     background-color: $secondary-color;
-    border: 1px solid $secondary-color;
+    border: 2px solid $secondary-color;
     margin: 1rem 0.5rem;
     font-size: 1rem;
     font-family: "Montserrat";
