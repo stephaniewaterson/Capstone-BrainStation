@@ -7,12 +7,13 @@ export default function BlogCard({ post }) {
 
   const date = new Date(post.timestamp);
   const [comments, setComments] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
   const fetchComments = async () => {
     try {
       const { data } = await axios.get(`${API_URL}/posts/${post.id}/comments`);
       setComments(data);
-      console.log(data);
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
     }
@@ -22,7 +23,9 @@ export default function BlogCard({ post }) {
     fetchComments();
   }, []);
 
-  console.log(comments);
+  if (isLoading) {
+    return <p>is loading...</p>;
+  }
 
   return (
     <>
@@ -35,16 +38,14 @@ export default function BlogCard({ post }) {
           <p className="post__text">{post.content}</p>
         </div>
       </article>
-      {/* {comments
-        .filter((comment) => comment.id === post.id)
-        .map((comment) => {
-          return (
-            <article className="comment">
-              <p>{comment.name}</p>
-              <p>{comment.comment}</p>
-            </article>
-          );
-        })} */}
+      {comments.map((comment) => {
+        return (
+          <article key={comment.id} className="comment">
+            <p>{comment.name}</p>
+            <p>{comment.comment}</p>
+          </article>
+        );
+      })}
     </>
   );
 }

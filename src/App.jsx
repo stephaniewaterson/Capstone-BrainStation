@@ -6,7 +6,7 @@ import BlogPage from "./pages/BlogPage/BlogPage";
 import HomePage from "./pages/HomePage/HomePage";
 import NavBar from "./components/NavBar/NavBar";
 import HelpPage from "./pages/HelpPage/HelpPage";
-import Chat from "./pages/Chat/Chat";
+// import Chat from "./pages/Chat/Chat";
 import "./App.scss";
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
         <Route path="/blog" element={<BlogHome />} />
         <Route path="/blog/:id" element={<BlogPage />} />
         <Route path="/help" element={<HelpPage />} />
-        <Route path="/chat" element={<Chat />} />
+        {/* <Route path="/chat" element={<Chat />} /> */}
       </Routes>
       <Footer />
     </BrowserRouter>
