@@ -1,17 +1,82 @@
+import { useState, useEffect } from "react";
+import "./ChatMessage.scss";
+
 export default function Chatmessage({ socket, username, room }) {
+  const [currentMessage, setCurrentMessage] = useState("");
+  const [messageList, setMessageList] = useState([]);
+
+  const sendMessage = async () => {
+    if (currentMessage !== "") {
+      const messageData = {
+        room: room,
+        author: username,
+        message: currentMessage,
+        time:
+          new Date(Date.now()).getHours() +
+          ":" +
+          new Date(Date.now()).getMinutes(),
+      };
+
+      await socket.emit("send_message", messageData);
+      setMessageList((list) => [...list, messageData]);
+      // setMessageList([...messageList, messageData]);
+      console.log(messageData);
+      setCurrentMessage("");
+    }
+  };
+
+  useEffect(() => {
+    socket.on("receive_message", (data) => {
+      setMessageList((list) => [...list, data]);
+      // setMessageList([...messageList, data]);
+      console.log(data);
+    });
+  }, []);
+
   return (
-    <section className="chatroom">
-      <header className="chatroom__header">
-        <h2 className="chatroom__title">Live Chat</h2>
+    <section className="chat-window">
+      <header className="chat-window__header">
+        <h2 className="chat-window__title">Live Chat</h2>
       </header>
-      <section className="chatroom__body"></section>
-      <footer className="chatroom__footer">
+      <section className="chat-window__body">
+        {" "}
+        <section className="message-container">
+          {messageList.map((messageContent, i) => {
+            return (
+              <div
+                className="message"
+                key={i}
+                id={username === messageContent.author ? "you" : "other"}
+              >
+                <div>
+                  <div className="message__content">
+                    <p>{messageContent.message}</p>
+                  </div>
+                  <div className="message__meta">
+                    <p id="time">{messageContent.time}</p>
+                    <p id="author">{messageContent.author}</p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </section>
+      </section>
+      <footer className="message__footer">
         <input
-          type="text"
-          placeholder="new message"
-          className="chatroom__input"
+          type="text "
+          placeholder="Hey..."
+          className="message__input"
+          onChange={(event) => {
+            setCurrentMessage(event.target.value);
+          }}
+          onKeyUp={(event) => {
+            event.key === "Enter" && sendMessage();
+          }}
         />
-        <button>&#9658;</button>
+        <button className="message__button" onClick={sendMessage}>
+          &#9658;
+        </button>
       </footer>
     </section>
   );

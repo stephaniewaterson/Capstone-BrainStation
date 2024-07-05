@@ -4,7 +4,8 @@ import App from "./App.jsx";
 import "./index.scss";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  //strict mode disabled due to wb socket io triggering emit from server twice.
+  // <React.StrictMode>
+  <App />
+  // </React.StrictMode>
 );
