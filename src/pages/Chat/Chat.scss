@@ -1,0 +1,11 @@
+.chat {
+  padding: 2rem;
+  margin: auto;
+
+  &__title {
+    padding: 6rem 3rem 0 3rem;
+    font-family: "Monterserrat";
+    font-size: 2rem;
+    font-weight: 500;
+  }
+}
