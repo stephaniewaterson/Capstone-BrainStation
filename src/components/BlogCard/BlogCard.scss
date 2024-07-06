@@ -20,7 +20,8 @@
     padding: 1rem 0;
   }
   &__name,
-  &__text {
+  &__text,
+  &__comment-number {
     font-family: "Montserrat";
   }
 
@@ -28,5 +29,62 @@
     font-weight: 600;
     font-size: 1.2rem;
     color: $primary-color;
+  }
+
+  &__comment {
+    padding: 1rem 0;
+    margin: 1rem 0;
+    border-bottom: 1px lightgray solid;
+  }
+}
+
+.comment {
+  box-shadow: 0px 2px 5px 0px #13182c1a;
+  border: 1px $primary-color solid;
+  padding: 1.5rem 2rem;
+  margin: 1rem;
+  font-family: "Montserrat";
+
+  &__name {
+    padding: 0.5rem 0;
+    font-weight: 600;
+  }
+
+  &-form {
+    display: flex;
+    align-items: center;
+
+    &__input {
+      box-shadow: 0px 2px 5px 0px #13182c1a;
+      border: 1px $primary-color solid;
+      padding: 1.5rem 1rem;
+      margin: 1rem;
+      height: 4rem;
+      width: 100%;
+      font-size: 1rem;
+      &-text {
+        font-family: "Montserrat";
+        width: 80%;
+        padding: 0.5rem;
+      }
+
+      &-name {
+        width: 10%;
+        box-shadow: 0px 2px 5px 0px #13182c1a;
+        border: 1px $primary-color solid;
+        padding: 1.5rem 1rem;
+        margin: 1rem;
+        height: 4rem;
+        font-size: 1rem;
+      }
+    }
+    &__add-icon {
+      width: 3rem;
+      height: 3rem;
+      background-image: url("../../assets/icons/add.png");
+      background-size: 3rem;
+      border: none;
+      background-color: white;
+    }
   }
 }
