@@ -62,7 +62,7 @@ export default function BlogPage() {
           </article>
         </Link>
 
-        <BlogPosts posts={posts} />
+        <BlogPosts posts={posts} fetchPosts={fetchPosts} />
       </section>
     </>
   );

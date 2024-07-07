@@ -8,7 +8,7 @@ import { useParams } from "react-router";
 
 const API_URL = import.meta.env.VITE_BACKEND_URL;
 
-export default function AddPostModel({ open, onClose, fetchPosts, posts }) {
+export default function AddPostModel({ open, onClose, fetchPosts }) {
   const [error, setError] = useState(null);
   const { id } = useParams();
   const [formSubmitted, setFormSubmitted] = useState(false);
