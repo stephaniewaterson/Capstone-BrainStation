@@ -31,6 +31,12 @@
   &__container {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    padding-left: 10%;
+
+    @include tablet {
+      padding: 0;
+    }
   }
 
   &__close {
@@ -38,8 +44,6 @@
     padding: 0;
     background: none;
     cursor: pointer;
-    padding-block: 0;
-    padding-inline: 0;
     align-self: flex-end;
     height: 1.5rem;
 
@@ -50,6 +54,7 @@
 
   &__header {
     padding: 1.5rem 0;
+    font-family: "Montserrat";
 
     @include tablet {
       padding: 1.5rem 2rem;
@@ -57,13 +62,12 @@
   }
 
   &__body {
-    font-size: 0.938rem;
-    line-height: 1.625rem;
+    font-size: 1rem;
     color: $primary-color;
+    font-family: "Montserrat";
 
     @include tablet {
-      font-size: 1rem;
-      line-height: 1.75rem;
+      font-size: 1.5rem;
       padding: 0 2rem;
     }
   }
@@ -86,13 +90,13 @@
       border: 1px solid grey;
 
       &:hover {
-        color: red;
-        border-color: red;
+        color: $primary-color;
+        border-color: $primary-color;
       }
     }
 
     &--delete {
-      background-color: red;
+      background-color: $primary-color;
       color: white;
 
       &:hover {

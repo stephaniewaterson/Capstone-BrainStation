@@ -62,7 +62,6 @@ export default function BlogCard({ post, fetchPosts, posts }) {
       <div id="delete-portal">
         <DelPostModal
           open={isOpen}
-          posts={posts}
           Post={post}
           onClose={() => setIsOpen(false)}
           fetchPosts={fetchPosts}
