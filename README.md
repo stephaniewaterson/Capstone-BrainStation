@@ -17,9 +17,23 @@ Main challenges were deciding on what to incoporate and what to do first with ti
 ## Installation 
 
 1. download or clone the repository
-2. run npm install
-3. create own env file and set environments as per env.example
-4. npm run dev
+2. download [Capstone API](https://github.com/stephaniewaterson/Capstone-api-BrainStation)
+
+For this respository: 
+1. run npm install
+2. create own env file and set environments as per env.example
+3. npm run dev
+
+For Capstone API:
+1. create own env file and set environments for both backend API ports, as per env.example
+2. Create a database in SQL
+3. npm run dev
+4. npm run migrate & npm run seed
+
+Then open the URL given from the frontend
+
+(will publish/upload publically this week). 
+
 
 ## Use
 
