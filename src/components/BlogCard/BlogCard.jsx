@@ -44,11 +44,7 @@ export default function BlogCard({ post, fetchPosts, posts }) {
       comment,
     };
 
-    if (name === "") {
-      name = "anonymous";
-    }
-
-    if (!comment) {
+    if (!comment || !name) {
       return;
     }
 
