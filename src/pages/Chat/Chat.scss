@@ -11,6 +11,34 @@
   font-family: "Montserrat";
   display: grid;
   place-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+
+  @include tablet {
+    padding: 5rem 0;
+  }
+
+  &__back {
+    padding: 0;
+    text-decoration: none;
+    color: $primary-color;
+    padding: 1rem 0;
+    background-color: white;
+    border: none;
+
+    &:hover {
+      border-bottom-style: solid;
+      border-bottom-width: 0.25rem;
+      border-bottom-left-radius: 1rem;
+      border-bottom-right-radius: 1rem;
+      border-top: solid;
+      border-top-width: 0.25rem;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+      padding: 0.5rem;
+    }
+  }
 
   &__title {
     padding: 6rem 3rem 0 3rem;
@@ -34,6 +62,13 @@
     border-radius: 5px;
     padding: 5px;
     font-size: 16px;
+    text-align: center;
+  }
+
+  &__options {
+    background-color: white;
+    font-family: "Montserrrat";
+    font-size: 1.4rem;
   }
 
   &__button {
@@ -51,8 +86,15 @@
     &:hover {
       background: $third-color;
       color: white;
-
-      // border: solid $ 2px;
     }
+  }
+}
+.p-dropdown-item {
+  background-color: white;
+  font-family: "Montserrat";
+  padding: 0.5rem;
+
+  &:hover {
+    background-color: $primary-color;
   }
 }

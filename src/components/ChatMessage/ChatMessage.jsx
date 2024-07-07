@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import "./ChatMessage.scss";
+import { Link } from "react-router-dom";
+import backIcon from "../../assets/icons/back.jpg";
 
-export default function Chatmessage({ socket, username, room }) {
+export default function Chatmessage({ socket, username, room, setShowChat }) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
 
@@ -19,24 +21,21 @@ export default function Chatmessage({ socket, username, room }) {
 
       await socket.emit("send_message", messageData);
       setMessageList((list) => [...list, messageData]);
-      // setMessageList([...messageList, messageData]);
-      console.log(messageData);
       setCurrentMessage("");
+      console.log("hey");
     }
   };
 
   useEffect(() => {
     socket.on("receive_message", (data) => {
       setMessageList((list) => [...list, data]);
-      // setMessageList([...messageList, data]);
-      console.log(data);
     });
-  }, []);
+  }, [socket]);
 
   return (
     <section className="chat-window">
       <header className="chat-window__header">
-        <h2 className="chat-window__title">Live Chat</h2>
+        <h2 className="chat-window__title">{`${room} live chat`}</h2>
       </header>
       <section className="chat-window__body">
         {" "}
@@ -64,9 +63,10 @@ export default function Chatmessage({ socket, username, room }) {
       </section>
       <footer className="message__footer">
         <input
-          type="text "
+          type="text"
           placeholder="Hey..."
           className="message__input"
+          value={currentMessage}
           onChange={(event) => {
             setCurrentMessage(event.target.value);
           }}

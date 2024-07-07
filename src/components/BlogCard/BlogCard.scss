@@ -85,6 +85,10 @@
       background-size: 3rem;
       border: none;
       background-color: white;
+
+      &:hover {
+        transform: scale(1.25);
+      }
     }
   }
 }
