@@ -74,6 +74,7 @@ export default function BlogCard({ post, fetchPosts, posts }) {
             <div>
               <div className="post__info">
                 <h3 className="post__name">{post.title}</h3>
+                <p className="post__user">Posted by {post.user_name}</p>
               </div>
               <p className="post__text">{post.content}</p>
             </div>

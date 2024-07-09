@@ -20,12 +20,10 @@ export default function AddPostModel({ open, onClose, fetchPosts }) {
   const handleAddPost = async (event) => {
     event.preventDefault();
 
-    const location_id = id;
     const title = event.target.title.value;
     const content = event.target.content.value;
 
     const result = {
-      location_id,
       title,
       content,
     };
@@ -34,13 +32,21 @@ export default function AddPostModel({ open, onClose, fetchPosts }) {
       return;
     }
 
+    const token = sessionStorage.getItem("token");
+
     try {
-      await axios.post(`${API_URL}/locations/${id}/posts`, result);
+      await axios.post(`${API_URL}/locations/${id}/posts`, result, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       setFormSubmitted(true);
       onClose();
       fetchPosts(id);
     } catch (error) {
-      console.error(error);
+      if (error.response.status === 401) {
+        setErrorMessage("You must log in to post on the forum");
+      }
     }
   };
 

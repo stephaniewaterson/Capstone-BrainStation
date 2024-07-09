@@ -9,6 +9,33 @@ import Chat from "./pages/Chat/Chat";
 import "./App.scss";
 
 function App() {
+  // const [user, setUser] = useState(null);
+
+  // const checkIsLoggedIn = async () => {
+  //   const token = sessionStorage.getItem("token");
+
+  //   if (!token) {
+  //     setUser(null);
+  //     return;
+  //   }
+
+  //   try {
+  //     const response = await axios.get(
+  //       import.meta.env.VITE_API_URL + "/users/me",
+  //       { headers: { Authorization: `Bearer ${token}` } }
+  //     );
+
+  //     // TODO: Ensure this works upon login without having to refresh the page
+  //     setUser(response.data);
+  //   } catch (error) {
+  //     setUser(null);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   checkIsLoggedIn();
+  // }, []);
+
   return (
     <BrowserRouter>
       <NavBar />
