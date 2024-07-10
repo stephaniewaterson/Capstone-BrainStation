@@ -7,14 +7,14 @@
 
   @include tablet {
     height: auto;
-    width: fit-content;
+
     position: absolute;
   }
 
   &__items {
     display: flex;
     margin: 2rem;
-    justify-content: space-evenly;
+    justify-content: space-between;
     list-style-type: none;
 
     @include tablet {
@@ -23,6 +23,14 @@
     @include desktop {
       margin: 2rem;
     }
+  }
+
+  &__left {
+    display: flex;
+  }
+
+  &__right {
+    display: flex;
   }
 
   &__link {

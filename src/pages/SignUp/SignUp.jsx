@@ -1,10 +1,10 @@
-import "./Login.scss";
+import "./SignUp.scss";
 import Input from "../../components/Input/Input";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Login() {
+export default function Signup() {
   const [errorMessage, setErrorMessage] = useState(null);
   const navigate = useNavigate();
 
@@ -14,30 +14,28 @@ export default function Login() {
     event.preventDefault();
 
     try {
-      const response = await axios.post(`${API_URL}/users/login`, {
+      await axios.post(`${API_URL}/users/`, {
         username: event.target.username.value,
         password: event.target.password.value,
+        name: event.target.name.value,
       });
 
-      sessionStorage.setItem("token", response.data);
-
-      // TODO: Make this work without refresh
-      // navigate("/");
-      window.location.href = "/";
+      navigate("/login");
     } catch (error) {
       setErrorMessage("Please try again");
     }
   };
 
   return (
-    <main className="login-page">
-      <h1 className="login-page__title">Log in</h1>
+    <main className="signup-page">
+      <h1 className="signup-page__title">Sign up</h1>
 
       <form onSubmit={handleSubmit}>
+        <Input type="text" name="name" label="Name" />
         <Input type="text" name="username" label="Username" />
         <Input type="password" name="password" label="Password" />
 
-        <button className="login-page__button">Log in</button>
+        <button className="signup-page__button">Sign up</button>
       </form>
 
       {errorMessage && <p>{errorMessage}</p>}
