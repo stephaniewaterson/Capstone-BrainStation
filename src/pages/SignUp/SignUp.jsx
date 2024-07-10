@@ -13,11 +13,20 @@ export default function Signup() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    const name = event.target.name.value;
+    const password = event.target.password.value;
+    const username = event.target.username.value;
+
+    if (!username || !password || !name) {
+      setErrorMessage("Please provide a name, username and password");
+      return;
+    }
+
     try {
       await axios.post(`${API_URL}/users/`, {
-        username: event.target.username.value,
-        password: event.target.password.value,
-        name: event.target.name.value,
+        username: username,
+        password: password,
+        name: name,
       });
 
       navigate("/login");
@@ -38,7 +47,7 @@ export default function Signup() {
         <button className="signup-page__button">Sign up</button>
       </form>
 
-      {errorMessage && <p>{errorMessage}</p>}
+      {errorMessage && <p className="signup-page__error">{errorMessage}</p>}
     </main>
   );
 }

@@ -12,6 +12,12 @@ export default function Chat({ user }) {
   const [showChat, setShowChat] = useState(false);
   const [selectedLocation, setSelectedLocation] = useState(null);
 
+  useEffect(() => {
+    if (user) {
+      setUsername(user.name);
+    }
+  }, []);
+
   const joinRoom = () => {
     if (!username || !room) {
       return;
@@ -72,14 +78,19 @@ export default function Chat({ user }) {
     setRoom(e.target.value);
   }
 
-  console.log(user);
   return (
     <>
       <section className="chat">
         {!showChat ? (
           <div className="chat__container">
             <h3 className="chat__title">Join a chat</h3>
-            {user && <input className="chat__input" value={user.name} />}
+            {user && (
+              <input
+                className="chat__input"
+                value={user.name}
+                readOnly={true}
+              />
+            )}
             {!user && (
               <input
                 type="text"

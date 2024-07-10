@@ -4,7 +4,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function Login() {
+export default function Login({ checkIsLoggedIn }) {
   const [errorMessage, setErrorMessage] = useState(null);
   const navigate = useNavigate();
 
@@ -19,13 +19,13 @@ export default function Login() {
         password: event.target.password.value,
       });
 
-      sessionStorage.setItem("token", response.data);
+      sessionStorage.setItem("token", response.data.token);
+      checkIsLoggedIn();
 
-      // TODO: Make this work without refresh
-      // navigate("/");
-      window.location.href = "/";
+      navigate("/");
     } catch (error) {
       setErrorMessage("Please try again");
+      console.log(error);
     }
   };
 
@@ -40,7 +40,7 @@ export default function Login() {
         <button className="login-page__button">Log in</button>
       </form>
 
-      {errorMessage && <p>{errorMessage}</p>}
+      {errorMessage && <p className="login-page__error">{errorMessage}</p>}
     </main>
   );
 }
