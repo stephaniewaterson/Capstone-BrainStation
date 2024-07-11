@@ -3,7 +3,7 @@ import BlogCard from "../BlogCard/BlogCard";
 import { BeatLoader } from "react-spinners";
 import { useParams } from "react-router";
 
-export default function BlogPosts({ posts, fetchPosts }) {
+export default function BlogPosts({ posts, fetchPosts, user }) {
   return (
     <section className="blog">
       <article className="blog__article">
@@ -15,6 +15,7 @@ export default function BlogPosts({ posts, fetchPosts }) {
               post={post}
               fetchPosts={fetchPosts}
               posts={posts}
+              user={user}
             />
           );
         })}

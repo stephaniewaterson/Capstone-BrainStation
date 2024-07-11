@@ -7,11 +7,8 @@ import closeIcon from "../../assets/icons/close.png";
 import { useParams } from "react-router";
 
 const API_URL = import.meta.env.VITE_BACKEND_URL;
-console.log(API_URL);
 
 export default function DelPostModal({ open, onClose, fetchPosts, Post }) {
-  const [post, setPost] = useState(null);
-
   const { id } = useParams();
 
   if (!open) {

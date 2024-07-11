@@ -44,7 +44,7 @@
 }
 
 .message__content {
-  width: auto;
+  width: fit-content;
   height: auto;
   min-height: 40px;
   max-width: 120px;
@@ -55,8 +55,8 @@
   align-items: center;
   margin-right: 5px;
   margin-left: 5px;
-  padding-right: 5px;
-  padding-left: 5px;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
   overflow-wrap: break-word;
   word-break: break-word;
 }
@@ -80,7 +80,7 @@
 
 #other .message__content {
   justify-content: flex-start;
-  background-color: $primary-color;
+  background-color: $secondary-color;
 }
 
 #other .message__meta {

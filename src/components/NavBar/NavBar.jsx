@@ -49,14 +49,18 @@ export default function NavBar({ user, checkIsLoggedIn }) {
               </li>
             </>
           )}
+
+          {user && (
+            <>
+              <p className="nav__id nav__link">Hello {user.name}</p>
+              <li>
+                <button className="nav__button nav__link" onClick={handleClick}>
+                  Logout
+                </button>
+              </li>
+            </>
+          )}
         </div>
-        {user && (
-          <li>
-            <button className="nav__button nav__link" onClick={handleClick}>
-              Logout
-            </button>
-          </li>
-        )}
       </ul>
     </section>
   );

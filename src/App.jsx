@@ -31,7 +31,6 @@ function App() {
 
       // TODO: Ensure this works upon login without having to refresh the page
       setUser(response.data);
-      console.log(response.data);
     } catch (error) {
       setUser(null);
     }

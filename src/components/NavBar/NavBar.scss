@@ -12,13 +12,13 @@
   }
 
   &__items {
-    display: flex;
     margin: 2rem;
-    justify-content: space-between;
     list-style-type: none;
 
     @include tablet {
       margin: 2rem 1rem;
+      display: flex;
+      justify-content: space-between;
     }
     @include desktop {
       margin: 2rem;
@@ -27,10 +27,17 @@
 
   &__left {
     display: flex;
+    justify-content: space-between;
   }
 
   &__right {
     display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+
+    @include tablet {
+      padding-top: 0;
+    }
   }
 
   &__link {
@@ -61,5 +68,11 @@
     background-color: white;
     border: white;
     font-family: "Italiana";
+    padding: 0 1rem 0 0;
+  }
+
+  &__id {
+    padding: 0 2rem 0 0;
+    font-weight: 600;
   }
 }
