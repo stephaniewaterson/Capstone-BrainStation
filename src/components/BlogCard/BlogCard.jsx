@@ -4,7 +4,7 @@ import axios from "axios";
 import deleteIcon from "../../assets/icons/delete.svg";
 import DelPostModal from "../DelPostModal/DelPostModal";
 
-export default function BlogCard({ post, fetchPosts, posts }) {
+export default function BlogCard({ post, fetchPosts, user }) {
   const API_URL = import.meta.env.VITE_BACKEND_URL;
 
   const date = new Date(post.timestamp);
@@ -12,6 +12,7 @@ export default function BlogCard({ post, fetchPosts, posts }) {
   const [isLoading, setIsLoading] = useState(true);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [username, setUsername] = useState("");
 
   const fetchComments = async () => {
     try {
@@ -22,6 +23,12 @@ export default function BlogCard({ post, fetchPosts, posts }) {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    if (user) {
+      setUsername(user.name);
+    }
+  }, []);
 
   useEffect(() => {
     fetchComments();
@@ -74,6 +81,7 @@ export default function BlogCard({ post, fetchPosts, posts }) {
             <div>
               <div className="post__info">
                 <h3 className="post__name">{post.title}</h3>
+                <p className="post__user">Posted by {post.user_name}</p>
               </div>
               <p className="post__text">{post.content}</p>
             </div>
@@ -98,12 +106,22 @@ export default function BlogCard({ post, fetchPosts, posts }) {
               handleAddPost(event);
             }}
           >
-            <input
-              className="comment-form__input-name"
-              type="text"
-              name="name"
-              placeholder="Name"
-            />
+            {!user && (
+              <input
+                className="comment-form__input-name"
+                type="text"
+                name="name"
+                placeholder="Name"
+              />
+            )}
+            {user && (
+              <input
+                className="comment-form__input-name"
+                type="text"
+                value={user.name}
+                readOnly={true}
+              />
+            )}
             <input
               className="comment-form__input"
               type="text"

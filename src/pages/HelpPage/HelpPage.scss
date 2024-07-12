@@ -1,12 +1,24 @@
+@use "../../styles/partials/mixins" as *;
+
 .help {
   &__header {
     font-size: 2rem;
     padding: 2rem;
-    padding-top: 5rem;
+    padding-top: 1rem;
+    text-align: center;
+
+    @include tablet {
+      padding: 7rem 0 2rem 4rem;
+      text-align: left;
+    }
   }
   &__text {
     padding: 2rem;
     font-family: "Montserrat";
     line-height: 2rem;
+
+    @include tablet {
+      padding: 0 4rem;
+    }
   }
 }

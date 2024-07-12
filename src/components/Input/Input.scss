@@ -1,0 +1,25 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/colors" as *;
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-family: "Montserrat";
+  margin-top: 1rem;
+
+  @include tablet {
+    font-size: 1.25rem;
+  }
+
+  &__input {
+    margin-bottom: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    padding: 0.5rem;
+    font-size: inherit;
+    font-family: inherit;
+    resize: vertical;
+    width: 30rem;
+    border-radius: 1rem;
+  }
+}

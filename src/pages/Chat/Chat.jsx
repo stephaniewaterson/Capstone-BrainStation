@@ -6,11 +6,17 @@ import { Dropdown } from "primereact/dropdown";
 
 const socket = io.connect("http://localhost:3001");
 
-export default function Chat() {
+export default function Chat({ user }) {
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
   const [showChat, setShowChat] = useState(false);
   const [selectedLocation, setSelectedLocation] = useState(null);
+
+  useEffect(() => {
+    if (user) {
+      setUsername(user.name);
+    }
+  }, []);
 
   const joinRoom = () => {
     if (!username || !room) {
@@ -78,15 +84,23 @@ export default function Chat() {
         {!showChat ? (
           <div className="chat__container">
             <h3 className="chat__title">Join a chat</h3>
-            <input
-              type="text"
-              placeholder="Name..."
-              className="chat__input"
-              onChange={(event) => {
-                setUsername(event.target.value);
-              }}
-            />
-
+            {user && (
+              <input
+                className="chat__input"
+                value={user.name}
+                readOnly={true}
+              />
+            )}
+            {!user && (
+              <input
+                type="text"
+                placeholder="Name..."
+                className="chat__input"
+                onChange={(event) => {
+                  setUsername(event.target.value);
+                }}
+              />
+            )}
             <div className="card flex justify-content-center">
               <Dropdown
                 value={selectedLocation}

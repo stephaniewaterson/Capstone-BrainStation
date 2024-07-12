@@ -10,7 +10,7 @@ import AddPostModal from "../../components/AddPostModal/AddPostModal";
 
 const API_URL = import.meta.env.VITE_BACKEND_URL;
 
-export default function BlogPage() {
+export default function BlogPage({ user }) {
   const [isOpen, setIsOpen] = useState(false);
   const { locations, error, fetchData } = fetchLocations();
 
@@ -34,6 +34,14 @@ export default function BlogPage() {
     return <> Loading blog posts...</>;
   }
 
+  function handleClick() {
+    setIsOpen(true);
+  }
+
+  function showError() {
+    return <p>Please log in to post</p>;
+  }
+
   return (
     <>
       <div id="portal">
@@ -55,14 +63,24 @@ export default function BlogPage() {
               </h2>
             );
           })}
-        <Link className="blog-page__link" onClick={() => setIsOpen(true)}>
-          <article className="blog-page__add">
-            <h3 className="blog-page___add-header">Add post</h3>
-            <img className="blog-page__add-icon" src={addIcon} alt="" />
-          </article>
-        </Link>
+        {!user && (
+          <Link className="blog-page__dummyadd" to="/login">
+            <h3 className="blog-page___dummtadd-header">
+              Log in to add a post
+            </h3>
+            <img className="blog-page__dummyadd-icon" src={addIcon} alt="" />
+          </Link>
+        )}
+        {user && (
+          <Link className="blog-page__link" onClick={handleClick}>
+            <article className="blog-page__add">
+              <h3 className="blog-page___add-header">Add post</h3>
+              <img className="blog-page__add-icon" src={addIcon} alt="" />
+            </article>
+          </Link>
+        )}
 
-        <BlogPosts posts={posts} fetchPosts={fetchPosts} />
+        <BlogPosts posts={posts} fetchPosts={fetchPosts} user={user} />
       </section>
     </>
   );

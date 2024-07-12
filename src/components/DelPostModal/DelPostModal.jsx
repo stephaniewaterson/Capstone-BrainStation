@@ -7,10 +7,9 @@ import closeIcon from "../../assets/icons/close.png";
 import { useParams } from "react-router";
 
 const API_URL = import.meta.env.VITE_BACKEND_URL;
-console.log(API_URL);
 
 export default function DelPostModal({ open, onClose, fetchPosts, Post }) {
-  const [post, setPost] = useState(null);
+  const { id } = useParams();
 
   if (!open) {
     return null;
@@ -20,12 +19,8 @@ export default function DelPostModal({ open, onClose, fetchPosts, Post }) {
     console.log(Post.id);
 
     try {
-      const { data } = await axios.delete(
-        `${API_URL}/locations/posts/${Post.id}`
-      );
-      console.log("hello");
-      fetchPosts();
-      setPost(data);
+      await axios.delete(`${API_URL}/locations/posts/${Post.id}`);
+      fetchPosts(id);
     } catch (error) {
       console.error(error);
     }
