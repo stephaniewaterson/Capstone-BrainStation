@@ -4,7 +4,7 @@ import io from "socket.io-client";
 import ChatMessage from "../../components/ChatMessage/ChatMessage";
 import { Dropdown } from "primereact/dropdown";
 
-const socket = io.connect("http://localhost:3001");
+const socket = io.connect(import.meta.env.SOCKET_BACKEND_URL);
 
 export default function Chat({ user }) {
   const [username, setUsername] = useState("");
