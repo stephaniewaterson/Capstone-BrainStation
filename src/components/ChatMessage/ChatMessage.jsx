@@ -28,6 +28,8 @@ export default function Chatmessage({ socket, username, room, setShowChat }) {
 
   useEffect(() => {
     socket.on("receive_message", (data) => {
+      console.log("socket recieve message");
+      console.log(data);
       setMessageList((list) => [...list, data]);
     });
   }, [socket]);
