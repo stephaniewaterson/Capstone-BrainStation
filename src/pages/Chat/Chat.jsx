@@ -4,12 +4,8 @@ import io from "socket.io-client";
 import ChatMessage from "../../components/ChatMessage/ChatMessage";
 import { Dropdown } from "primereact/dropdown";
 
-<<<<<<< HEAD
-const socket = io.connect(import.meta.env.SOCKET_BACKEND_URL);
+const socket = io.connect(import.meta.env.VITE_BACKEND_URL);
 
-=======
-const socket = io.connect("http://localhost:8080");
->>>>>>> ably
 export default function Chat({ user }) {
   const [username, setUsername] = useState("");
   const [room, setRoom] = useState("");
