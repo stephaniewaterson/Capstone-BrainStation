@@ -1,5 +1,5 @@
 # LocalLingo
-<<<<<<< HEAD
+
 
 ## Overview
 
