@@ -1,0 +1,32 @@
+.users {
+  padding-top: 2rem;
+
+  &__header {
+    text-align: center;
+    color: rgb(172, 87, 87);
+    font-weight: 600;
+  }
+  &__box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    // flex-wrap: wrap;
+    margin: 0 2rem;
+    padding: 1rem 0rem;
+  }
+
+  &__id {
+    padding: 0.75rem 0rem;
+    font-weight: 600;
+    display: flex;
+  }
+
+  &__image {
+    background-color: rgb(172, 87, 87);
+    width: 2rem;
+    height: 2rem;
+    border-radius: 2rem;
+    margin-right: 0.4rem;
+  }
+}

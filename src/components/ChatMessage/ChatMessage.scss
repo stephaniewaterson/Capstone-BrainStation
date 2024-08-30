@@ -1,9 +1,16 @@
 @use "../../styles/partials/colors" as *;
 @use "../../styles/partials/mixins" as *;
+.chat-page {
+  height: 100%;
+  width: 90%;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: row;
+}
 
 .chat-window {
   height: 95%;
-  width: 90%;
+  width: 95%;
   padding: 1rem 0;
 
   &__header {

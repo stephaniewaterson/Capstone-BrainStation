@@ -121,6 +121,7 @@ export default function Chat({ user }) {
         ) : (
           <>
             <ChatMessage socket={socket} username={username} room={room} />
+
             <button className="chat__back" onClick={() => setShowChat(false)}>
               <p>Go back to country list</p>
             </button>
