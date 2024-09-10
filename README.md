@@ -1,6 +1,7 @@
 # LocalLingo
-<<<<<<< HEAD
 
+https://locallingo.netlify.app/
+(in process of ensuring websocket functionality, these are only working in development currently)
 ## Overview
 
 Social media app to learn languages and local phrases of places across the world. Especaily designed for those who have a already have a good understanding of the basics of the language wanting to learn certain dialects and local phrases for specific countries/areas e.g. Levantine Dialect in Arabic, Kurdish Argentinian Spanish. Also for those wanting to know local phrases or cultural good-to-knows for a country they are travelling.
