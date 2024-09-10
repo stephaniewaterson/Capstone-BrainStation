@@ -21,8 +21,14 @@
     border: 2px $secondary-color solid;
     position: relative;
     cursor: pointer;
-    padding: 0.5rem 2rem;
-    font-size: 1rem;
+
+    padding: 0.5rem;
+    font-size: 0.75rem;
+
+    @include tablet {
+      font-size: 1rem;
+      padding: 0.5rem 2rem;
+    }
   }
 
   &__body {
