@@ -4,7 +4,15 @@ import io from "socket.io-client";
 import ChatMessage from "../../components/ChatMessage/ChatMessage";
 import { Dropdown } from "primereact/dropdown";
 
-const socket = io.connect("http://localhost:3001", { autoConnect: false });
+const socket = io.connect("http://localhost:3001", {
+  reconnectionDelay: 1000,
+  reconnection: true,
+  reconnectionAttemps: 10,
+  // transports: ["websocket"],
+  agent: false,
+  upgrade: false,
+  rejectUnauthorized: false,
+});
 
 socket.onAny((event, ...args) => {
   console.log(event, args);
