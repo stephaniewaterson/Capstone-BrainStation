@@ -4,7 +4,15 @@ import io from "socket.io-client";
 import ChatMessage from "../../components/ChatMessage/ChatMessage";
 import { Dropdown } from "primereact/dropdown";
 
+<<<<<<< HEAD
 const socket = io.connect(import.meta.env.VITE_BACKEND_URL);
+=======
+const socket = io.connect("http://localhost:3001", { autoConnect: false });
+
+socket.onAny((event, ...args) => {
+  console.log(event, args);
+});
+>>>>>>> develop
 
 export default function Chat({ user }) {
   const [username, setUsername] = useState("");
@@ -121,6 +129,7 @@ export default function Chat({ user }) {
         ) : (
           <>
             <ChatMessage socket={socket} username={username} room={room} />
+
             <button className="chat__back" onClick={() => setShowChat(false)}>
               <p>Go back to country list</p>
             </button>
