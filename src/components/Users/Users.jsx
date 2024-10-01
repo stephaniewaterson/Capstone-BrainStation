@@ -30,29 +30,26 @@ export default function Users() {
     <>
       <div className="users">
         <header className="users__header">Users</header>
-
         {allUsers &&
           allUsers.map((user) => {
             return (
-              <>
-                <div className="users__box">
-                  <div key={user.id} className="users__id">
-                    <img
-                      src="../../../src/assets/icons/avatar2.png"
-                      alt=""
-                      className="users__image"
-                    />
-                    <p className="users__name">{user.username}</p>
-                  </div>
-                  <div>
-                    {isOnline ? (
-                      <p className="users__status">🟢 online</p>
-                    ) : (
-                      <p className="users__status">🔴 offline</p>
-                    )}
-                  </div>
+              <div className="users__box" key={user.id}>
+                <div className="users__id">
+                  <img
+                    src="../../../src/assets/icons/avatar2.png"
+                    alt=""
+                    className="users__image"
+                  />
+                  <p className="users__name">{user.username}</p>
                 </div>
-              </>
+                <div>
+                  {isOnline ? (
+                    <p className="users__status">🟢 online</p>
+                  ) : (
+                    <p className="users__status">🔴 offline</p>
+                  )}
+                </div>
+              </div>
             );
           })}
       </div>
