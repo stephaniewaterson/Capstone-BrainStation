@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import "./ChatMessage.scss";
 import Users from "../../components/Users/Users";
 
-export default function Chatmessage({ socket, username, room, setShowChat }) {
+export default function Chatmessage({ socket, username, room }) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
 

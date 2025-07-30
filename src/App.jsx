@@ -11,6 +11,7 @@ import "./App.scss";
 import Signup from "./pages/SignUp/SignUp";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import useNetworkStatus from "./components/NextworkContext/NextworkContext";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -41,22 +42,28 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
-      <NavBar user={user} setUser={setUser} checkIsLoggedIn={checkIsLoggedIn} />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/blog" element={<BlogHome />} />
-        <Route path="/blog/:id" element={<BlogPage user={user} />} />
-        <Route path="/help" element={<HelpPage />} />
-        <Route path="/chat" element={<Chat user={user} />} />
-        <Route
-          path="/login"
-          element={<Login checkIsLoggedIn={checkIsLoggedIn} />}
+    <>
+      <BrowserRouter>
+        <NavBar
+          user={user}
+          setUser={setUser}
+          checkIsLoggedIn={checkIsLoggedIn}
         />
-        <Route path="/signup" element={<Signup />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/blog" element={<BlogHome />} />
+          <Route path="/blog/:id" element={<BlogPage user={user} />} />
+          <Route path="/help" element={<HelpPage />} />
+          <Route path="/chat" element={<Chat user={user} />} />
+          <Route
+            path="/login"
+            element={<Login checkIsLoggedIn={checkIsLoggedIn} />}
+          />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </>
   );
 }
 

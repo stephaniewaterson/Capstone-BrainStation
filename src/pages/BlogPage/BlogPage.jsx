@@ -28,6 +28,7 @@ export default function BlogPage({ user }) {
 
   useEffect(() => {
     fetchPosts(id);
+    fetchData(); // <- Make sure this is added
   }, [id]);
 
   if (!posts) {
