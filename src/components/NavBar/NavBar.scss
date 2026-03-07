@@ -33,9 +33,11 @@
     display: flex;
     justify-content: center;
     padding-top: 1rem;
+    gap: 1rem;
 
     @include tablet {
       padding-top: 0;
+      gap: 0;
     }
   }
 

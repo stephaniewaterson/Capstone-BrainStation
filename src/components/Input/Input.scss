@@ -19,7 +19,9 @@
     font-size: inherit;
     font-family: inherit;
     resize: vertical;
-    width: 30rem;
+    width: 100%;
     border-radius: 1rem;
+    max-width: 30rem;
+    box-sizing: border-box;
   }
 }
